@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue From Scratch</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h1 v-bind:title="menu"> {{ message }}</h1> -->
+        <!-- <p v-text="content"></p> -->
+        <ul>
+            <li v-for="todo in items">{{ todo }}</li>
+        </ul>
+
+        <input type="text" v-model="item">
+        <button @click="items.push(item)">Add Item</button>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+    <script>
+       new Vue({
+            el: '#app',
+            data: {
+                item : '',
+                items : [
+                    'item 1',
+                    'item 2'
+                ]
+                // message: 'Hello Vue!',
+                // content: 'This is a Vue App',
+                // menu : 'my data here'
+            }
+        })
+    </script>
+
+</body>
+
+</html>
